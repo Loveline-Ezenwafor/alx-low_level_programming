@@ -1,22 +1,21 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - prints the value of the third element
+ * of the array "a"
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int a[5];
+	int a[5] = {98, 402, 198, 1024, 307};
 	int *p;
 
-	a[2] = 1024;
-	p = &a[2];
+	p = a;
 
-	/* write your line of code here */
-	(*p) = 98;
-	/* Don't touch the code below */
-	printf("a[2] = %d\n", a[2]);
+	/* your code goes here */
+
+	printf("a[2] = %d\n", *(p + 2));
+
 	return (0);
 }
