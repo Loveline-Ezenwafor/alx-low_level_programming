@@ -3,44 +3,39 @@
 
 /**
  * *string_nconcat - concatenates n bytes of a string to another string
- * @a1: string to append to
- * @a2: string to concatenate from
- * @n: number of bytes from a2 to concatenate to a1
+ * @s1: string to append to
+ * @s2: string to concatenate from
+ * @n: number of bytes from s2 to concatenate to s1
  *
  * Return: pointer to the resulting string
  */
-char *string_nconcat(char *a1, char *a2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *a;
+	char *s;
 
 	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	while (a1 && a1[len1])
+	while (s1 && s1[len1])
 		len1++;
-	while (a2 && a2[len2])
+	while (s2 && s2[len2])
 		len2++;
 	if (n < len2)
-		a = malloc(sizeof(char) * (len1 + n + 1));
+		s = malloc(sizeof(char) * (len1 + n + 1));
 	else
-		a = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (!a)
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!s)
 		return (NULL);
 	while (i < len1)
 	{
-		a[i] = a1[i];
+		s[i] = s1[i];
 
 		i++;
 	}
 	while (n < len2 && i < (len1 + n))
-
-		a[i++] = a2[j++];
-
+		s[i++] = s2[j++];
 	while (n >= len2 && i < (len1 + len2))
-
-		a[i++] = a2[j++];
-
-	a[i] = '\0';
-
+		s[i++] = s2[j++];
+		s[i] = '\0';
 	return (s);
 
 }
