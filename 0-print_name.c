@@ -3,14 +3,13 @@
 /**
  * print_name - print name using pointer to function
  * @name: string to add
- * @p: pointer to function
+ * @f: pointer to function
  * Return: nothing
  **/
-void print_name(char *name, void (*p)(char *))
+void print_name(char *name, void (*f)(char *))
 {
-	if (name == NULL || p == NULL)
+	if (name == NULL || f == NULL)
 		return;
 
-	p(name);
+	f(name);
 }
-
