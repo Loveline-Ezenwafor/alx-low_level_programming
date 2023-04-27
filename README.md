@@ -1,1 +1,1 @@
-0x0F function pointers
+singly linked lists
